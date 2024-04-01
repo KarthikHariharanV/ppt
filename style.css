@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins;
+
+}
+.video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 35%;
+}
+.videos{
+    width: 100%;
+    height: 100vh;
+
+}
+
+#preloader{
+    background: #000 url(image/preload.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 200;
+}
+
+.slide{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slide .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.slide .list .item .bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 50%;
+}
+.slide .list .item .bgmi{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide .list .item .bgm{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 30%;
+}
+.slide .list .item .content{
+    position: absolute;
+    top: 15%;
+    width: 2000px;
+    max-width: 80%;
+    left:35%;
+    transform: translateX(-50%);
+    padding-right: 3%;
+    padding-left: 10%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.slide .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.slide .list .item .title{
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.slide .list .item .topic{
+    color: #f1683a;
+}
+.slide .list .item .content .des{
+    list-style-type: circle;
+    font-size: 25px;
+}
+
+/* arrows */
+.arrows{
+    position: absolute;
+    bottom: 10px;
+    left: 46%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+
+}
+.arrows button{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* animation */
+.slide .list .item:nth-child(1){
+    z-index:20;
+}
+
+/* animation text in first item */
+
+.slide .list .item .content .author,
+.slide .list .item .content .title,
+.slide .list .item .content .tit,
+.slide .list .item .content .topic,
+.slide .list .item .content .des,
+.slide .list .item .cont
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.slide .list .item .content .title{
+    animation-delay: 1.2s!important;
+}
+.slide .list .item .content .tit{
+    animation-delay: 1.2s!important;
+}
+.slide .list .item .content .topic{
+    animation-delay: 1.4s!important;
+}
+.slide .list .item .content .des{
+    animation-delay: 1.6s!important;
+}
+
+/* create animation when next click */
+.slide .next .list .item img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+#bh{
+    background: #03002B;
+}
+#hh{
+   background:rgb(13, 44, 145); 
+}
+#fullscreen-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .slide .list .item .bulb{
+    position: fixed;
+    top: 70px;
+    right: 300px;
+    padding: 10px;
+
+    z-index: 103;
+
+    
+
+       
+  }
+  .slide .list .item .bulb img{
+    height: 80px;
+    position: absolute;
+    width: 100px;
+
+
+  }
+
+.block-diagram {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the diagram horizontally */
+  }
+  
+.block {
+    background-color: rgb(0, 81, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .block:hover{
+    background-color: #fff;
+    color:  rgb(0, 81, 255);
+    cursor: pointer;
+  }
+  
+ .arrow {
+    font-size: 40px; /* Adjust font size as needed */
+  }
+
+ .di{
+    position: fixed;
+    top: 70px;
+    right: 200px;
+    padding: 10px;
+
+    z-index: 104;      
+  }
+ .di video{
+    height: 500px;
+    position: absolute;
+    width: 500px;
+  }
+  .slide .list .item .content .tit{
+    font-size: 28px;
+    text-shadow: #000;
+
+  }
+
+  .gallery {
+    position: absolute;
+    bottom: 10px;
+    left: 60%;
+    --s: 170px; /* control the size */
+    --g: 20px;  /* control the gap */
+    display: grid;
+    margin: calc(var(--s) + var(--g));
+  }
+  
+  .gallery > img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: cover;
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
+    transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .2s linear;
+  }
+  .gallery > img:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.2;
+  }
+  
+  .gallery > img:nth-child(1) {--_x: calc(-100% - var(--g))}
+  .gallery > img:nth-child(7) {--_x: calc( 100% + var(--g))}
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
+  .gallery > img:nth-child(4),
+  .gallery > img:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
+  .gallery > img:nth-child(5), 
+  .gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
+
+  .slide .list .item  .points {
+    position: absolute;
+    top: 30%;
+    height: 7000px;
+    width: 800px;
+    right: 1%;
+    left: 38%;
+    z-index: 1000;
+  }
+  .slide .list .item  .points ul{
+
+    font-size: 25px;
+    list-style: circle;
+    font-family: 'Lucida Sans';
+    padding-top: 20px;
+  }
+  .slide .list .item .cont{
+    position: absolute;
+    top: 15%;
+    width: 1500px;
+    max-width: 60%;
+    left:1%;
+    transform: translateX(-50%);
+
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+  }
+
+  .d1,.d2{
+    height: 220px;
+    width: 220px;
+    padding: 28px;
+  }
+
+  .diagram {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the diagram horizontally */
+  }
+  
+.blk {
+
+    background-color: whitesmoke;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .blk:hover{
+    background-color: black;
+    color:  whitesmoke;
+    cursor: pointer;
+  }
+  
+ .arrow {
+    font-size: 40px; /* Adjust font size as needed */
+ }
+ .kk{
+    position: absolute;
+    object-fit: contain;
+ }
+  .t{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3em;
+    padding-left: 30%;
+}
+.a{
+    padding-left: 30%;
+font-weight: bold;
+letter-spacing: 10px;
+}
+
+.slide .list .item .ar .aro{
+    position: absolute;
+    display: block;
+    left: 30%;
+    height: 200px;
+    width: 300px;
+}
+.slide .list .item .ar .arov{
+    position: absolute;
+    left: 70%;
+    height: 200px;
+    width: 300px;
+}
+.slide .list .item .content .pic{
+    position: absolute;
+    left: 70%;
+    height: 200px;
+    width: 300px;
+}
+#tj{
+    background-image: url(image/photo3.jpg) ;
+}
+.slide .list .item .content .hhh{  
+    font-size: 18px;
+}
+.slide .list .item .content .game .hhh ul{
+    position: relative;
+
+    left: 20%;
+    height: 100%;
+    width: 60%;
+    left: 8%;
+}
+
+
